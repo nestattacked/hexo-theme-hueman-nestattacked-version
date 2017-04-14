@@ -1,9 +1,7 @@
 # Menus
 menu:
     Home: /
-    # Delete this row if you don't want categories in your header nav bar
     Categories:
-    About: /about/index.html
 
 # Customize
 customize:
@@ -22,7 +20,6 @@ customize:
         google-plus: /
         github: https://github.com/ppoffice/hexo-theme-hueman
         weibo: /
-        rss: /
 
 # Widgets
 widgets:
