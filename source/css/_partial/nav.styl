@@ -30,7 +30,7 @@ $nav-link
     #main-nav-toggle
         display: none
         width: 100%
-        text-align: right
+        text-align: center
         box-sizing: border-box
         border-bottom: 1px solid rgba(255,255,255,0.06)
         &:before
@@ -89,11 +89,15 @@ $nav-link
     height: 50px
     overflow: hidden
     box-sizing: border-box
+    cursor: pointer
+    text-align: center
     &:before
         content: "\f002"
-        margin-right: 8px
         color: color-nav-foreground
         font: normal normal normal 16px/1 FontAwesome
+    &:hover
+        &:before
+            color: #fff
 
 .search-form-input,
 .search-form-input.ins-search-input,
