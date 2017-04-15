@@ -6,14 +6,14 @@ menu:
 # Customize
 customize:
     logo:
-        width: 165
-        height: 60
+        width: 75
+        height: 70
         url: images/logo-header.png
     theme_color: '#006bde'
     highlight: androidstudio
     sidebar: left # sidebar position, options: left, right
     thumbnail: true # enable posts thumbnail, options: true, false
-    favicon: # path to favicon
+    favicon: css/images/favicon.ico
     social_links: # for more icons, please see http://fontawesome.io/icons/#brand
         zhihu: https://www.zhihu.com/people/yang-chun-43
         github: https://github.com/nestattacked
