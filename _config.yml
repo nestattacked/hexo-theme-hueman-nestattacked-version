@@ -15,6 +15,7 @@ customize:
     thumbnail: true # enable posts thumbnail, options: true, false
     favicon: # path to favicon
     social_links: # for more icons, please see http://fontawesome.io/icons/#brand
+        zhihu: https://www.zhihu.com/people/yang-chun-43
         github: https://github.com/nestattacked
 
 # Widgets

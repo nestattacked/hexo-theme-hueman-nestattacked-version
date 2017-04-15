@@ -2178,6 +2178,9 @@
 .fa-font-awesome:before {
   content: "\f2b4";
 }
+.fa-zhihu:before {
+  content: "\f2b5";
+}
 .sr-only {
   position: absolute;
   width: 1px;
