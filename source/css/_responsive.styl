@@ -6,9 +6,9 @@
         display: block !important
 
 /* ------------------------------------------------------------------------- *
- *    Toggle Sidebar s1 : 959px > 480px
+ *    Toggle Sidebar s1 : 959px > 600px
 /* ------------------------------------------------------------------------- */
-@media only screen and (min-width: 480px) and (max-width: 959px)
+@media only screen and (min-width: 600px) and (max-width: 959px)
     #header
         padding-bottom: sidebar-toggle-width
         .nav-container-inner
@@ -22,7 +22,7 @@
                 &:focus
                     width: 100px
         .subtitle-wrap
-            margin-left: 0px
+            margin-left: 20px
     .main-body
         margin-top: - sidebar-toggle-width
     .main-body-inner
@@ -54,6 +54,7 @@
                 height: sidebar-toggle-width
                 background: color-theme
                 box-sizing: border-box
+                cursor: pointer
                 .toggle
                     line-height: 38px
                     font-size: 38px
@@ -65,11 +66,13 @@
                         else
                             content: '\f101'
             .sidebar-top
-                padding: 10px 30px
                 background: none
                 border-bottom: 1px solid color-border
                 p, a, i
                     color: #666
+                a:hover
+                    i:before
+                        color: #222
             #article-nav, .widgets-container, .sidebar-top
                 opacity: 0
                 transition: opacity 0.2s ease-in
@@ -98,9 +101,9 @@
             padding: 12px 30px
 
 /* ------------------------------------------------------------------------- *
- *    Mobile (Low Res) : 479px > 0 (320px)
+ *    Mobile (Low Res) : 599px > 0 (320px)
 /* ------------------------------------------------------------------------- */
-@media only screen and (max-width: 479px)
+@media only screen and (max-width: 599px)
     .container
         padding: 0px
     #header
