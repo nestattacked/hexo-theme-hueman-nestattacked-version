@@ -79,12 +79,12 @@
                     '</ul></li>'].join('')).appendTo($('#main-nav'));
                 // Bind hover event
                 $('.main-nav-more').hover(function () {
-                    if($(window).width() < 480) {
+                    if($(window).width() < 600) {
                         return;
                     }
                     $(this).children('.main-nav-list-child').slideDown('fast');
                 }, function () {
-                    if($(window).width() < 480) {
+                    if($(window).width() < 600) {
                         return;
                     }
                     $(this).children('.main-nav-list-child').slideUp('fast');
@@ -115,12 +115,12 @@
 
     // Fold second-level menu
     $('.main-nav-list-item').hover(function () {
-        if ($(window).width() < 480) {
+        if ($(window).width() < 600) {
             return;
         }
         $(this).children('.main-nav-list-child').slideDown('fast');
     }, function () {
-        if ($(window).width() < 480) {
+        if ($(window).width() < 600) {
             return;
         }
         $(this).children('.main-nav-list-child').slideUp('fast');
