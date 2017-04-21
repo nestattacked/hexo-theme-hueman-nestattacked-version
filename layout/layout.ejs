@@ -5,13 +5,18 @@
         <div class="container">
             <div class="main-body container-inner">
                 <div class="main-body-inner">
+                    <% if( is_post() ){ %>
+                        <%- partial('common/sidebar') %>
+                    <% } %>
                     <section id="main">
                         <%- partial('common/content-title') %>
                         <div class="main-body-content">
                             <%- body %>
                         </div>
                     </section>
-                    <%- partial('common/sidebar') %>
+                    <% if( !is_post() ){ %>
+                        <%- partial('common/sidebar') %>
+                    <% } %>
                 </div>
             </div>
         </div>

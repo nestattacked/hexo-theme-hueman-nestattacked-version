@@ -14,13 +14,15 @@
         </ul>
     </div>
     <% if (is_post()) { %>
-        <%- partial('post/nav', {post: page}) %>
-    <% } %>
-    <div class="widgets-container">
+        <h1 class="toc-title">目录</h1>
+        <%- toc(page.content,{list_number:true}) %>
+    <% }else{ %>
         <% if (theme.widgets) { %>
+            <div class="widgets-container">
             <% theme.widgets.forEach(function(widget) { %>
                 <%- partial('widget/' + widget) %>
             <% }) %>
+            </div>
         <% } %>
-    </div>
+    <% } %>
 </aside>
