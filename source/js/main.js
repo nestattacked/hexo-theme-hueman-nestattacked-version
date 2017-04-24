@@ -1,8 +1,13 @@
 (function ($) {
     // To top button
-    $("#back-to-top").on('click', function () {
-        $('body, html').animate({ scrollTop: 0 }, 600);
+    $('#back-to-top').on('click', function () {
+        $('body, html').animate({ scrollTop: 0 }, 400);
     });
+
+    // To content button
+    $('#back-to-contents').on('click', function(){
+        $('body, html').animate({scrollTop:$('.toc-title').offset().top}, 400);
+    })
 
     // Nav bar toggle
     $('#main-nav-toggle').on('click', function () {
