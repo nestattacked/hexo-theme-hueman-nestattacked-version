@@ -50,8 +50,10 @@
     $('#sidebar .sidebar-toggle').click(function () {
         if($('#sidebar').hasClass('expend')) {
             $('#sidebar').removeClass('expend');
+            $('.sidebar-toggle').removeClass('sidebar-toggle-expend');
         } else {
             $('#sidebar').addClass('expend');
+            $('.sidebar-toggle').addClass('sidebar-toggle-expend');
         }
     });
 
@@ -138,4 +140,68 @@
         }
     });
 
+    //helper for adjustCatalog
+    function clearStyle(elements){
+        elements.forEach(function(element){
+            element.removeAttr('style');
+        });
+    }
+    function setAbsoluteStyle(elements){
+        var bottom = 0;
+        elements.reverse();
+        elements.forEach(function(element){
+            element.css('position','absolute');
+            element.css('bottom',bottom);
+            bottom += element.outerHeight();
+        });
+    }
+    function setFixedStyle(elements){
+        var top = 0;
+        elements.forEach(function(element){
+            element.css('position','fixed');
+            element.css('top',top);
+            top += element.outerHeight();
+        });
+    }
+    //make title of contents always available
+    function adjustCatalog(){
+        var isWideScreen = window.innerWidth >= 960;
+        var isMobile = window.innerWidth <= 599;
+        var target = $('.toc-title');
+        var marginTop = 0;
+        var targetOffsetTop = $('#header').outerHeight();
+        if(!isMobile){
+            //calculate location where catalog should be
+            var catalogHeight = $('.toc-title').outerHeight() + $('.toc').outerHeight();
+            var availableSpaceHeight = $('#main').outerHeight();
+            if(isWideScreen){
+                availableSpaceHeight -= $('.sidebar-top').outerHeight();
+            }else{
+                target = $('.sidebar-toggle');
+                catalogHeight += $('.sidebar-toggle').outerHeight();
+                targetOffsetTop = $('#header').height();
+            }
+            marginTop = $(window).scrollTop() - targetOffsetTop;
+
+            //get elements which need to be relocate
+            var catalogElements = [];
+            if(!isWideScreen){
+                catalogElements.push($('.sidebar-toggle'));
+            }
+            catalogElements.push($('.toc-title'));
+            catalogElements.push($('.toc'));
+
+            //set new style for catalog
+            clearStyle(catalogElements);
+            if(marginTop<0){
+            }else if(marginTop>(availableSpaceHeight-catalogHeight)){
+                setAbsoluteStyle(catalogElements);
+            }else{
+                setFixedStyle(catalogElements);
+            }
+        }
+    }
+    $(window).scroll(adjustCatalog);
+    $(window).resize(adjustCatalog);
+    $(adjustCatalog);
 })(jQuery);
