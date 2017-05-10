@@ -140,6 +140,32 @@
         }
     });
 
+    //throttle function wrapper
+    function throttle(func, wait){
+        var context, args, timeout, result;
+        var previous = 0;
+        var later = function() {
+            previous = new Date;
+            timeout = null;
+            result = func.apply(context, args);
+        };
+        return function(){
+            var now = new Date;
+            var remaining = wait-(now-previous);
+            context = this;
+            args = arguments;
+            if(remaining<=0){
+                clearTimeout(timeout);
+                timeout = null;
+                previous = now;
+                result = func.apply(context, args);
+            }else if(!timeout) {
+                timeout = setTimeout(later, remaining);
+            }
+            return result;
+        };
+    }
+
     //add fold and unfold function to catalog
     function activateCatalogExpand(){
         $('.toc').on('click','.toc-level-1 > a, .toc-level-2 > a',function(event){
@@ -225,8 +251,9 @@
     }
     //only used in post page
     if($('[itemprop="blogPost"]').length>0){
-        $(window).scroll(adjustCatalog);
-        $(window).resize(adjustCatalog);
+        var throttledAdjustCatalog = throttle(adjustCatalog,20);
+        $(window).scroll(throttledAdjustCatalog);
+        $(window).resize(throttledAdjustCatalog);
     }
     //when loaded, set catalog to right place
     $(adjustCatalog);
