@@ -140,6 +140,26 @@
         }
     });
 
+    //add fold and unfold function to catalog
+    function activateCatalogExpand(){
+        $('.toc').on('click','.toc-level-1 > a, .toc-level-2 > a',function(event){
+            var title = $(this).find('.toc-text');
+            var isFold = /^[\s\S]* \(\d+\)$/.test(title.text());
+            if(isFold){
+                title.text(/(^[\s\S]*) \(\d+\)$/.exec(title.text())[1]);
+                $(this).next().css('display','block');
+                event.preventDefault();
+            }else{
+                var subtitleNum = $(this).next().children().length;
+                if(subtitleNum>0){
+                    title.text(title.text()+' ('+subtitleNum+')');
+                    $(this).next().css('display','none');
+                    event.preventDefault();
+                }
+            }
+        });
+    }
+
     //helper for adjustCatalog
     function clearStyle(elements){
         elements.forEach(function(element){
@@ -170,6 +190,10 @@
         var target = $('.toc-title');
         var marginTop = 0;
         var targetOffsetTop = $('#header').outerHeight();
+
+        //clear style for catalog
+        clearStyle([$('.toc'),$('.toc-title'),$('.sidebar-toggle')]);
+
         if(!isMobile){
             //calculate location where catalog should be
             var catalogHeight = $('.toc-title').outerHeight() + $('.toc').outerHeight();
@@ -191,8 +215,6 @@
             catalogElements.push($('.toc-title'));
             catalogElements.push($('.toc'));
 
-            //set new style for catalog
-            clearStyle(catalogElements);
             if(marginTop<0){
             }else if(marginTop>(availableSpaceHeight-catalogHeight)){
                 setAbsoluteStyle(catalogElements);
@@ -201,7 +223,12 @@
             }
         }
     }
-    $(window).scroll(adjustCatalog);
-    $(window).resize(adjustCatalog);
+    //only used in post page
+    if($('[itemprop="blogPost"]').length>0){
+        $(window).scroll(adjustCatalog);
+        $(window).resize(adjustCatalog);
+    }
+    //when loaded, set catalog to right place
     $(adjustCatalog);
+    $(activateCatalogExpand);
 })(jQuery);
