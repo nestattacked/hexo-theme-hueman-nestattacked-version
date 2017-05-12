@@ -125,12 +125,12 @@
         if ($(window).width() < 600) {
             return;
         }
-        $(this).children('.main-nav-list-child').slideDown('fast');
+        $(this).children('.main-nav-list-child').stop().slideDown('fast');
     }, function () {
         if ($(window).width() < 600) {
             return;
         }
-        $(this).children('.main-nav-list-child').slideUp('fast');
+        $(this).children('.main-nav-list-child').stop().slideUp('fast');
     });
 
     // Add second-level menu mark
