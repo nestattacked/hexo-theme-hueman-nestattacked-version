@@ -17,6 +17,7 @@ sidebar:
     newer: '下一篇'
     older: '上一篇'
     recents: '最新文章'
+    recommends: '推荐文章'
     archives: '归档'
     categories: '分类'
     links: '链接'
