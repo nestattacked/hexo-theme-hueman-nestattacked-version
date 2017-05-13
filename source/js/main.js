@@ -251,11 +251,18 @@
     }
     //only used in post page
     if($('[itemprop="blogPost"]').length>0){
-        var throttledAdjustCatalog = throttle(adjustCatalog,20);
-        $(window).scroll(throttledAdjustCatalog);
-        $(window).resize(throttledAdjustCatalog);
+        if($('.toc').length > 0){
+
+            //when loaded, set catalog to right place
+            $(adjustCatalog);
+
+            var throttledAdjustCatalog = throttle(adjustCatalog,20);
+            $(window).scroll(throttledAdjustCatalog);
+            $(window).resize(throttledAdjustCatalog);
+
+        }else{
+            $('.toc-title').hide();
+        }
     }
-    //when loaded, set catalog to right place
-    $(adjustCatalog);
     $(activateCatalogExpand);
 })(jQuery);

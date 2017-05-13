@@ -2,6 +2,7 @@
 menu:
     Home: /
     Categories:
+    Timeline: /timeline
 
 # Customize
 customize:
@@ -21,7 +22,6 @@ customize:
 # Widgets
 widgets:
     - recent_posts
-    - archive
 
 # Search
 search:
