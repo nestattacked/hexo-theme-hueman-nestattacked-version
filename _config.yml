@@ -35,7 +35,7 @@ plugins:
     justifiedgallery: true # options: true, false
     google_analytics: # enter the tracking ID for your Google Analytics
     baidu_analytics: # enter Baidu Analytics hash key
-    mathjax: false # options: true, false
+    mathjax: true # options: true, false
 
 # Miscellaneous
 miscellaneous:
