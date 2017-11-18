@@ -10,7 +10,7 @@ This is a hexo theme named hueman forked from [here](https://github.com/ppoffice
 git clone git@github.com:nestattacked/hexo-theme-hueman-nestattacked-version.git themes/hueman
 ```
 
-### edit config
+### edit blog's config
 
 edit your blog's `_config.yml`, change the `theme` field to `human` to enable the theme.
 
@@ -33,6 +33,15 @@ npm install --save hexo-asset-image hexo-front-matter-excerpt hexo-generator-jso
 ```
 cd themes/hueman
 npm install
+```
+
+### edit theme's config
+
+copy `_config.example.yml` to `_config.yml`.
+
+```
+cd themes/huemen
+cp _config.example.yml _config.yml
 ```
 
 # How to write articles
