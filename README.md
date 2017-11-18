@@ -12,30 +12,54 @@ git clone git@github.com:nestattacked/hexo-theme-hueman-nestattacked-version.git
 
 ### edit config
 
-edit your blog's `_config.yml`, change the `theme` field to `human` to enable the theme
+edit your blog's `_config.yml`, change the `theme` field to `human` to enable the theme.
 
 ```
 theme: hueman
 ```
 
-make sure `post_asset_folder: true` in your `_config.yml`
+make sure `post_asset_folder: true` in your `_config.yml`.
 
 ### install plugins
 
-in order to make it work, we need to install some hexo plugins, cd into your blog folder first
+in order to make it work, we need to install some hexo plugins, cd into your blog folder first.
 
 ```
 npm install --save hexo-asset-image hexo-front-matter-excerpt hexo-generator-json-content
+```
+
+### install dependency for theme
+
+```
+cd themes/hueman
+npm install
 ```
 
 # How to write articles
 
 ### create article
 
-use hexo-cli to create a new article
+use hexo-cli to create a new article.
 
 ```
 hexo new your-article-name
+```
+
+### example of front matter
+
+```
+---
+title: your title
+excerpt: your excerpt
+recommend: 3
+tags:
+  - tag1
+  - tag2
+categories:
+  - category1
+  - category2
+date: 2017-11-11 11:11:11
+---
 ```
 
 ### things about
@@ -49,3 +73,13 @@ when you create a new post `your-post`, hexo will create file `your-post.md` and
 ```
 ![](picture.jpg)
 ```
+
+# Issues might bother you
+
+### wrong language showed
+
+set language in `_config.yml`, like `language: zh-CN`.
+
+### how to change logo and favicon.ico
+
+just replace file in `hueman/source/css/images`, file of logo is `logo-header.png`.
