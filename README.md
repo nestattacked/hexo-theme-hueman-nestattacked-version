@@ -1,6 +1,6 @@
 # What is this
 
-This is a hexo theme named hueman forked from [here](https://github.com/ppoffice/hexo-theme-hueman), and i modified it to suit my own needs.
+This is a hexo theme named hueman forked from [here](https://github.com/ppoffice/hexo-theme-hueman), and i modified it to suit my own needs. You can see my blog as a [DEMO](https://www.nestattacked.com).
 
 # Install
 
