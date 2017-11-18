@@ -1,68 +1,51 @@
-# Hueman
-#### Probably the most beautiful theme for Hexo. [Preview](http://ppoffice.github.io/hexo-theme-hueman/)
+# What is this
 
-![Hueman](http://ppoffice.github.io/hexo-theme-hueman/gallery/screenshot.jpg "")
+This is a hexo theme named hueman forked from [here](https://github.com/ppoffice/hexo-theme-hueman), and i modified it to suit my own needs.
 
-> This theme is ported from [AlxMedia](https://github.com/AlxMedia)'s the WordPress theme [Hueman](https://github.com/AlxMedia/hueman).
+# Install
 
-> Special thanks to [AlxMedia](https://github.com/AlxMedia), who designed the original theme [Hueman](https://github.com/AlxMedia/hueman) for wordpress.
+### clone source code
 
-#### [View Documentation](https://github.com/ppoffice/hexo-theme-hueman/wiki)
-:star: It is strongly recommended that you read the docs before using Hueman.
+```
+git clone git@github.com:nestattacked/hexo-theme-hueman-nestattacked-version.git themes/hueman
+```
 
-## Features
+### edit config
 
-### Responsive Layout
+edit your blog's `_config.yml`, change the `theme` field to `human` to enable the theme
 
-Hueman knows on what screen size you are browsering the website, and reorganize the layout to fit your device.
+```
+theme: hueman
+```
 
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/responsive.jpg "")
+make sure `post_asset_folder: true` in your `_config.yml`
 
-### Categories inside Main Menu
+### install plugins
 
-Hueman inserts your blog categories into main menu in the header section. You can enable/disable this feature in `menu` setting.
+in order to make it work, we need to install some hexo plugins, cd into your blog folder first
 
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/main-menu.jpg "")
+```
+npm install --save hexo-asset-image hexo-front-matter-excerpt hexo-generator-json-content
+```
 
-### Self-hosted Insite Search Engine
-With the help of [Insight Search](https://github.com/ppoffice/hexo-theme-hueman/wiki/Search#insight-search), you can search anything inside your site without any third-party plugin.
+# How to write articles
 
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/insight-search.png "")
+### create article
 
-### Custom Comment Services
-Hueman supports several comment services, give you better choices to communicate with your readers.
+use hexo-cli to create a new article
 
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/custom-comments.png "")
+```
+hexo new your-article-name
+```
 
-### Thumbnail
+### things about
 
-Hueman uses the `thumbnail` [front-matter](https://hexo.io/docs/front-matter.html) option to set the thumbnail for a post. If the post does not have a `thumbnail` option, Hueman will find the first image in the post as the thumbnail. You can enable/disable this feature in `thumbnail` setting.
+this theme has a recommend widget in the sidebar, and the bigger recommend field's value of front matter is, the higger position the article will be displayed at.
 
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/thumbnail.jpg "")
+don't make too much categories, because it will be showed in the menu, you will want to keep menu simple and clear.
 
-### Code Highlight
-Hueman has more than 60 themes imported from [Highlight.js](https://github.com/isagalaev/highlight.js), and it is very easy to customize your own highlight theme.
+when you create a new post `your-post`, hexo will create file `your-post.md` and folder `your-post` in folder `source`. we can put asset like pictures into folder `your-post`, and use it directly like this:
 
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/code-highlight.png "")
-
-### lightgallery
-
-Hueman uses [lightgallery.js](https://sachinchoolur.github.io/lightgallery.js/) to showcase your photos. Just enable it in your configuration, and that's all!
-
-![](http://ppoffice.github.io/hexo-theme-hueman/gallery/lightgallery.jpg "")
-
-### Sidebar
-
-Hueman provides 6 built-in widgets:
-
-- recent_posts
-- category
-- archives
-- tag
-- tagcloud
-- links
-
-All of them are enabled by default. You can edit them in `widget` setting.
-
-### And so many new features to be explored...
-[View Documentation](https://github.com/ppoffice/hexo-theme-hueman/wiki)
+```
+![](picture.jpg)
+```
